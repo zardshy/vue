@@ -19,7 +19,7 @@ export function getToken() {
 
 export function setToken(token) {
     return Storage.session.set(Config.tokenKey, token)
-    //return Cookies.set(Config.tokenKey, token ,{ expires: Config.cookiesExpires })
+        //return Cookies.set(Config.tokenKey, token ,{ expires: Config.cookiesExpires })
 }
 
 export function removeToken() {

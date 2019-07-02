@@ -12,16 +12,16 @@ Vue.prototype.$Config = Config;
 Vue.use(ElementUI);
 
 router.beforeEach((to, from, next) => {
-  window.document.title = to.meta.title ? to.meta.title + '-' + Config.siteName : Config.siteName;
-  if (!isLogin() && to.path != '/login') {
-    next({ path: '/login' });
-  } else {
-    next();
-  }
+    window.document.title = to.meta.title ? to.meta.title + '-' + Config.siteName : Config.siteName;
+    if (!isLogin() && to.path != '/login') {
+        next({ path: '/login' });
+    } else {
+        next();
+    }
 });
 
 new Vue({
-  router,
-  store,
-  render: h => h(App)
+    router,
+    store,
+    render: h => h(App)
 }).$mount('#app')

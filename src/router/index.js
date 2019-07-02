@@ -1,32 +1,47 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import index from '@/views/layout/index.vue'
+
+import layout from '@/views/layout'
 
 Vue.use(Router)
 
-let RouterList = [
-  {
-    path: '/',
-    redirect: '/example/table',
-    name: 'Example',
-    component: () => import('@/views/layout/index.vue'),
-    children: [{
-      path: '/example/table',
-      component: () => import('@/views/example/table.vue')
-    }]
-  },
-  {
-    path: '/login',
-    name: 'login',
-    meta: {
-      title: '登陆页',
-      keepAlive: false
+let RouterList = [{
+        path: '/',
+        redirect: '/example/table',
+        name: 'Example',
+        component: layout,
+        children: [{
+            path: 'example/table',
+            component: () =>
+                import ('@/views/example/table.vue')
+        }, {
+            path: 'example/form',
+            component: () =>
+                import ('@/views/example/form.vue')
+        }]
+    }, {
+        path: '/map',
+        name: 'Map',
+        component: layout,
+        children: [{
+            path: "map/leaflet",
+            component: () =>
+                import ('@/views/map/leaflet.vue')
+        }]
     },
-    component: () => import('@/views/login/Login.vue')
-  }
+    {
+        path: '/login',
+        name: 'login',
+        meta: {
+            title: '登陆页',
+            keepAlive: false
+        },
+        component: () =>
+            import ('@/views/login/Login.vue')
+    }
 ]
 
 export default new Router({
-  scrollBehavior: () => ({ y: 0 }),
-  routes: RouterList
+    scrollBehavior: () => ({ y: 0 }),
+    routes: RouterList
 })
