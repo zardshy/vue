@@ -6,39 +6,57 @@ import layout from '@/views/layout'
 Vue.use(Router)
 
 let RouterList = [{
-        path: '/',
-        redirect: '/example/table',
-        name: 'Example',
-        component: layout,
-        children: [{
-            path: 'example/table',
-            component: () =>
-                import ('@/views/example/table.vue')
-        }, {
-            path: 'example/form',
-            component: () =>
-                import ('@/views/example/form.vue')
-        }]
-    }, {
-        path: '/map',
-        name: 'Map',
-        component: layout,
-        children: [{
-            path: "map/leaflet",
-            component: () =>
-                import ('@/views/map/leaflet.vue')
-        }]
+    path: '/',
+    redirect: '/example/table',
+    name: 'Example',
+    component: layout,
+    meta: {
+        title: 'Example'
     },
-    {
-        path: '/login',
-        name: 'login',
+    children: [{
+        path: 'example/table',
+        name: 'table',
         meta: {
-            title: '登陆页',
-            keepAlive: false
+            title: 'table'
         },
         component: () =>
-            import ('@/views/login/Login.vue')
-    }
+            import('@/views/example/table.vue')
+    }, {
+        path: 'example/form',
+        name: "form",
+        meta: {
+            title: 'form'
+        },
+        component: () =>
+            import('@/views/example/form.vue')
+    }]
+}, {
+    path: '/map',
+    name: 'Map',
+    component: layout,
+    meta: {
+        title: 'Map'
+    },
+    children: [{
+        path: 'map/leaflet',
+        name: 'leaflet',
+        meta: {
+            title: 'leaflet'
+        },
+        component: () =>
+            import('@/views/map/leaflet.vue')
+    }]
+},
+{
+    path: '/login',
+    name: 'login',
+    meta: {
+        title: '登陆页',
+        keepAlive: false
+    },
+    component: () =>
+        import('@/views/login/Login.vue')
+}
 ]
 
 export default new Router({
