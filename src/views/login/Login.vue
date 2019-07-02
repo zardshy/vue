@@ -2,14 +2,14 @@
   <div class="login">
     <div class="login-form">
       <div class="login-header">
-        <img src="@/assets/images/logo.svg" width="100" height="100" alt />
+        <img src="@/assets/images/123.jpg" width="90" height="90" alt />
         <p>XXXXX管理系统</p>
       </div>
       <el-input
         placeholder="请输入用户名"
         suffix-icon="fa fa-user"
         v-model="userNmae"
-        style="margin-bottom: 18px"
+        style="margin-bottom: 17px"
       ></el-input>
 
       <el-input
@@ -76,8 +76,8 @@ export default {
   width: 100%;
   background-color: #4498c4;
   .login-form {
-    width: 375px;
-    height: 400px;
+    width: 355px;
+    height: 380px;
     padding: 30px;
     background-color: white;
     text-align: left;
@@ -89,7 +89,7 @@ export default {
     display: block;
     .login-header {
       text-align: center;
-      font-size: 16px;
+      font-size: 17px;
       font-weight: bold;
       margin-bottom: 20px;
     }
