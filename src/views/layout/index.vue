@@ -1,10 +1,10 @@
 <template>
   <div>
-    <Header />
-    <el-container>
-      <Aside />
-      <Main />
-    </el-container>
+      <Header />
+      <el-container>
+        <Aside />
+        <Main />
+      </el-container>
   </div>
 </template>
 
@@ -19,8 +19,10 @@ export default {
   };
 </script>
 
-<style>
+
+<style scoped>
   .el-container {
     min-height: 100vh;
   }
 </style>
+
