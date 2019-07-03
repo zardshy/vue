@@ -1,5 +1,5 @@
 <template>
-<el-aside width="201px" border='fasle'>
+  <el-aside width="201px">
     <el-menu
       router
       unique-opened
@@ -7,23 +7,29 @@
       class="el-menu-vertical-demo"
       @open="handleOpen"
       @close="handleClose"
-      background-color="#324157"
+      background-color="#252424"
       text-color="#fff"
-      active-text-color="#ffd04b">
-    <template v-for="(item,i) in routeList">
-      <el-submenu  :key="i" :index='item.path'>
-        <template slot="title">
-          <i class="el-icon-location"></i>
-          <span>{{item.meta.title}}</span>
-        </template>
-          <el-menu-item class="itemC" v-for="itemC in item.children" :key="itemC.name" :index="itemC.path">
-        <i class="el-icon-location"></i>
-          <span>{{itemC.meta.title}}</span>
+      active-text-color="#3c8dbc"
+    >
+      <template v-for="(item,i) in routeList">
+        <el-submenu :key="i" :index="item.path">
+          <template slot="title">
+            <i class="el-icon-location"></i>
+            <span>{{item.meta.title}}</span>
+          </template>
+          <el-menu-item
+            class="itemC"
+            v-for="itemC in item.children"
+            :key="itemC.name"
+            :index="itemC.path"
+          >
+            <i class="el-icon-more-outline"></i>
+            <span>{{itemC.meta.title}}</span>
           </el-menu-item>
-      </el-submenu>
-    </template>
-  </el-menu>
-</el-aside>
+        </el-submenu>
+      </template>
+    </el-menu>
+  </el-aside>
 </template>
 
 
@@ -31,16 +37,16 @@
 export default {
   data() {
     return {
-      routeList:[]
+      routeList: []
     };
   },
   created() {
-    let temp= this.$router.options.routes.filter(r=>{
-      return r.path!='/' && r.path!='/login'
-    })
-    this.routeList=temp;
-    console.log(this.routeList)
-    console.log(this.$route.path)
+    let temp = this.$router.options.routes.filter(r => {
+      return r.path != "/" && r.path != "/login";
+    });
+    this.routeList = temp;
+    console.log(this.routeList);
+    console.log(this.$route.path);
   },
   methods: {
     handleOpen(key, keyPath) {
@@ -55,14 +61,14 @@ export default {
 
 
 <style>
-.itemC{
+.itemC {
   padding-left: 10px;
   padding-right: 0px;
 }
-.el-aside{
-display: block;
-position: relative;
-overflow-y: scroll;
-background-color: #324157 !important;
+.el-aside {
+  display: block;
+  position: relative;
+  overflow-y: scroll;
+  background-color: #252424;
 }
 </style>
