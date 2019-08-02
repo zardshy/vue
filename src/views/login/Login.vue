@@ -18,7 +18,7 @@
         v-model="password"
         type="password"
         style="margin-bottom: 18px"
-        @keyup.native.enter="login"
+        @keyup.native.enter="handleLogin"
       ></el-input>
 
       <el-button
@@ -59,7 +59,7 @@ export default {
           type: "success"
         });
         this.loginLoading = false;
-        this.$router.push({ path: "/" });
+        this.$router.push({ path: "/map" });
       }, 1000);
     }
   }
