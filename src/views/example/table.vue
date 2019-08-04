@@ -1,10 +1,28 @@
 <template>
   <div class="main">
-    <el-table stripe border v-loading="loading" :data="tableData" style="width: 100%">
+    <el-table
+      stripe
+      ref="multipleTable"
+      border
+      v-loading="loading"
+      :data="tableData"
+      style="width: 100%"
+    >
       <el-table-column type="selection" width="55"></el-table-column>
       <el-table-column type="index" :index="indexMethod"></el-table-column>
       <el-table-column sortable prop="date" label="日期" width="180"></el-table-column>
       <el-table-column sortable prop="name" label="姓名" width="180"></el-table-column>
+      <el-table-column label="姓名" width="180">
+        <template slot-scope="scope">
+          <el-popover trigger="hover" placement="top">
+            <p>姓名: {{ scope.row.name }}</p>
+            <p>住址: {{ scope.row.address }}</p>
+            <div slot="reference" class="name-wrapper">
+              <el-tag size="medium">{{ scope.row.name }}</el-tag>
+            </div>
+          </el-popover>
+        </template>
+      </el-table-column>
       <el-table-column sortable prop="address" label="地址"></el-table-column>
       <el-table-column sortable prop="address" label="地址"></el-table-column>
       <el-table-column fixed="right" label="操作" width="100">
@@ -14,6 +32,17 @@
         </template>
       </el-table-column>
     </el-table>
+    <el-pagination
+      class="fenye"
+      background
+      @size-change="handleSizeChange"
+      @current-change="handleCurrentChange"
+      :current-page="currentPage4"
+      :page-sizes="[100, 200, 300, 400]"
+      :page-size="100"
+      layout="total, sizes, prev, pager, next, jumper"
+      :total="400"
+    ></el-pagination>
   </div>
 </template>
 
@@ -21,6 +50,7 @@
 export default {
   data() {
     return {
+      multipleSelection: [],
       tableData: [
         {
           date: "2016-05-02",
@@ -51,31 +81,6 @@ export default {
           date: "2016-05-02",
           name: "王小虎",
           address: "上海市普陀区金沙江路 1518 弄"
-        },
-        {
-          date: "2016-05-02",
-          name: "王小虎",
-          address: "上海市普陀区金沙江路 1518 弄"
-        },
-        {
-          date: "2016-05-02",
-          name: "王小虎",
-          address: "上海市普陀区金沙江路 1518 弄"
-        },
-        {
-          date: "2016-05-04",
-          name: "王小虎",
-          address: "上海市普陀区金沙江路 1517 弄"
-        },
-        {
-          date: "2016-05-01",
-          name: "王小虎",
-          address: "上海市普陀区金沙江路 1519 弄"
-        },
-        {
-          date: "2016-05-03",
-          name: "王小虎",
-          address: "上海市普陀区金沙江路 1516 弄"
         }
       ],
       loading: true
@@ -94,6 +99,11 @@ export default {
 .main {
   background-color: #ffffff;
   padding: 20px;
+  height: calc(100vh - 80px);
+}
+.main .fenye {
+  margin: 20px;
+  float: right;
 }
 </style>
 

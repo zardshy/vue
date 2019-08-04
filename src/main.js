@@ -6,6 +6,10 @@ import ElementUI from 'element-ui';
 import '@/assets/css/style.scss';
 import Config from '@/config/app';
 import { isLogin } from '@/utils/dataStorage';
+import mavonEditor from 'mavon-editor'
+import 'mavon-editor/dist/css/index.css'
+// use
+Vue.use(mavonEditor)
 
 import axios from "axios";
 Vue.prototype.$axios = axios;

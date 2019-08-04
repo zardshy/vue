@@ -3,7 +3,7 @@
     <div class="login-form">
       <div class="login-header">
         <img src="@/assets/images/123.jpg" width="90" height="90" alt />
-        <p>XXXXX管理系统</p>
+        <p>地理信息大数据可视化系统demo</p>
       </div>
       <el-input
         placeholder="请输入用户名"
