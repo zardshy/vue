@@ -51,22 +51,32 @@ let routerList = [{
             title: 'map'
         },
         children: [{
-            path: '/map/mapboxgl',
-            name: 'mapboxgl',
-            meta: {
-                title: 'mapbox gl'
+                path: '/map/mapboxgl',
+                name: 'mapboxgl',
+                meta: {
+                    title: 'mapbox gl'
+                },
+                component: () =>
+                    import ('@/views/map/maoboxgl.vue')
+            }, {
+                path: '/map/maptalks',
+                name: 'maptalks',
+                meta: {
+                    title: 'maptalks'
+                },
+                component: () =>
+                    import ('@/views/map/maptalks.vue')
             },
-            component: () =>
-                import ('@/views/map/maoboxgl.vue')
-        }, {
-            path: '/map/maptalks',
-            name: 'maptalks',
-            meta: {
-                title: 'maptalks'
-            },
-            component: () =>
-                import ('@/views/map/maptalks.vue')
-        }]
+            {
+                path: '/map/openlayers',
+                name: 'openlayers',
+                meta: {
+                    title: 'openlayers'
+                },
+                component: () =>
+                    import ('@/views/map/ol.vue')
+            }
+        ]
     },
     {
         path: '/see',

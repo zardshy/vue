@@ -29,7 +29,7 @@ export default {
         })
       });
       this.$axios
-        .get("http://sakitam-fdd.cn/wind-layer/examples/out.json")
+        .get("https://raw.githubusercontent.com/zardshy/zard/master/assect/outaa.json")
         .then(res => {
           console.log(res);
           var config = {

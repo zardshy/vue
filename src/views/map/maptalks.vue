@@ -1,9 +1,9 @@
 <template>
   <div class="main">
-    <el-button type="primary" size="mini" icon="el-icon-loading" plain @click="add3Dmarker">添加3D标记</el-button>
-    <el-button type="primary" size="mini" icon="el-icon-loading" plain @click="addLine">动态画线</el-button>
-    <el-button type="primary" size="mini" icon="el-icon-loading" plain @click="cj">测量距离</el-button>
-    <el-button type="primary" size="mini" icon="el-icon-loading" plain @click="exportjpg">导出jpg</el-button>
+    <el-button type="primary" size="mini" icon="el-icon-location" plain @click="add3Dmarker">添加3D标记</el-button>
+    <el-button type="primary" size="mini" icon="el-icon-minus" plain @click="addLine">动态画线</el-button>
+    <el-button type="primary" size="mini" icon="el-icon-info" plain @click="cj">测量距离</el-button>
+    <el-button type="primary" size="mini" icon="el-icon-printer" plain @click="exportjpg">导出jpg</el-button>
     <div id="map"></div>
   </div>
 </template>
@@ -30,7 +30,7 @@ export default {
     this.$nextTick(() => initMap());
     const initMap = () => {
       let option = {
-        center: [105.08052356963802, 36.04231948670001],
+        center: [105.19052356963802, 36.04231948670001],
         zoom: 5,
         cneter: [121.0],
         maxZoom: 16,
@@ -108,7 +108,7 @@ export default {
     addLine() {
       this.map.animateTo(
         {
-          center: [121.1, 31.1],
+          center: [121.2, 31.1],
           zoom: 12,
           pitch: 15,
           bearing: 360
