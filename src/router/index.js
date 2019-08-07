@@ -136,6 +136,6 @@ let routerList = [{
 
 export default new Router({
     scrollBehavior: () => ({ y: 0 }),
-    mode: 'history',
+    mode: 'hash',
     routes: routerList
 })
