@@ -29,7 +29,7 @@ export default {
         })
       });
       this.$axios
-        .get("https://raw.githubusercontent.com/zardshy/zard/master/assect/outaa.json")
+        .get("https://zardshy.github.io/zard/assect/outaa.json")
         .then(res => {
           console.log(res);
           var config = {
