@@ -37,7 +37,6 @@
 
 <script>
 import { setToken } from "@/utils/dataStorage.js";
-// import { login as loginApi } from "../../api/demo";
 
 export default {
   data() {
@@ -74,12 +73,12 @@ export default {
   position: absolute;
   height: 100%;
   width: 100%;
-  background-color: #4498c4;
+  background-color:#134057;
   .login-form {
     width: 355px;
     height: 380px;
     padding: 30px;
-    background-color: white;
+    background-color:rgb(248, 246, 246);
     text-align: left;
     border-radius: 4px;
     position: relative;

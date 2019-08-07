@@ -1,21 +1,21 @@
 <template>
   <el-header style="text-align: right; font-size: 12px">
     <span class="header-btn">
-      <el-badge :value="3" class="badge">
+      <!-- <el-badge :value="3" class="badge"> -->
         <i class="el-icon-bell"></i>
-      </el-badge>
+      <!-- </el-badge> -->
     </span>
     <el-dropdown>
       <span class="header-btn">
         Admin
         <i class="el-icon-arrow-down el-icon--right"></i>
       </span>
-      <el-dropdown-menu slot="dropdown">
-        <el-dropdown-item @click.native="$router.push('/personal')">
-          <i style="padding-right: 8px" class="fa fa-cog"></i>个人中心
+      <el-dropdown-menu class="dropdownclass" slot="dropdown">
+        <el-dropdown-item>
+        <i class="el-icon-document" style="color:#3c8dbc"></i>个人中心
         </el-dropdown-item>
         <el-dropdown-item @click.native="logout">
-          <i style="padding-right: 8px" class="fa fa-key"></i>退出系统
+        <i class="el-icon-circle-close"  style="color:#3c8dbc"></i>退出系统
         </el-dropdown-item>
       </el-dropdown-menu>
     </el-dropdown>
@@ -37,39 +37,30 @@ export default {
 };
 </script>
 
+
 <style lang='scss' scoped>
+
 .el-header {
-  background-color: #3c8dbc;
+  background-color: #134057;
+  // background: url('../../../assets/images/bg.jpg');
   line-height: 60px;
 }
-.el-icon-bell {
-  font-size: 17px;
+.el-icon-bell{
+  font-size: 15px;
 }
 .header-btn {
-  .el-badge__content {
-    top: 17px;
-    right: 7px;
-    text-align: center;
-    font-size: 12px;
-    padding: 0 3px;
-    background-color: #00a65a;
-    color: #fff;
-    border: none;
-    white-space: nowrap;
-    vertical-align: baseline;
-    border-radius: 0.25em;
-  }
   overflow: hidden;
   height: 60px;
   display: inline-block;
   text-align: center;
   line-height: 60px;
   cursor: pointer;
-  padding: 0 14px;
+  padding: 0 15px;
   color: #fff;
+  margin: 0px;
 }
 .header-btn:hover {
-  background-color: #3184b4;
+  background-color: #275e7e;
   color: #fff;
 }
 </style>
