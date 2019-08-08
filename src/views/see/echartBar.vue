@@ -95,14 +95,17 @@ export default {
 
         var map = myChart.getModel().getComponent('maptalks3D').getMaptalks();
         console.log(map)
-        map.animateTo({
-            center: [108.4693, 33.123070],
-            zoom: 4,
-            pitch: 50,
-            bearing: 330
-        }, {
-            duration: 7000
-        });
+        setTimeout(() => {
+          map.animateTo({
+              center: [108.4693, 33.123070],
+              zoom: 4,
+              pitch: 50,
+              bearing: 330
+          }, {
+              duration: 7000
+          });
+        }, 1000);
+
      })
   }
 }

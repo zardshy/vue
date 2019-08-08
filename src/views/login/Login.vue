@@ -55,10 +55,11 @@ export default {
         setToken("adminToken");
         this.$notify({
           title: "登录成功!",
+          message:"请使用谷歌浏览器访问！",
           type: "success"
         });
         this.loginLoading = false;
-        this.$router.push({ path: "/map" });
+        this.$router.push({ path: "/see/wind" });
       }, 1000);
     }
   }

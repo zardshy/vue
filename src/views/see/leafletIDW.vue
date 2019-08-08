@@ -10,7 +10,11 @@ export default {
   data() {
     return {};
   },
+  created(){
+   
+  },
   mounted() {
+
     this.$nextTick(() => {
       let coord = [
         [31.381779, 121.228638, 54],
@@ -37,7 +41,8 @@ export default {
         marker.bindPopup(`<b>值:${coord[i][2]}</b>`);
       }
 
-      var idw1 = L.idwLayer(coord, {
+      // var idw1 = L.idwLayer(coord, {
+      var idw1 = window.idw(coord, {
         opacity: 0.4,
         maxZoom: 11,
         cellSize: 5, //每个单元格的高度和宽度，默认为25

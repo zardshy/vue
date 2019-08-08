@@ -42,41 +42,6 @@ let routerList = [{
                 title: '文本编辑器'
             }
         }]
-    }, {
-        path: '/map',
-        redirect: '/map/mapboxgl',
-        name: 'map',
-        component: Layout,
-        meta: {
-            title: 'map'
-        },
-        children: [{
-                path: '/map/mapboxgl',
-                name: 'mapboxgl',
-                meta: {
-                    title: 'mapbox gl'
-                },
-                component: () =>
-                    import ('@/views/map/maoboxgl.vue')
-            }, {
-                path: '/map/maptalks',
-                name: 'maptalks',
-                meta: {
-                    title: 'maptalks'
-                },
-                component: () =>
-                    import ('@/views/map/maptalks.vue')
-            },
-            {
-                path: '/map/openlayers',
-                name: 'openlayers',
-                meta: {
-                    title: 'openlayers'
-                },
-                component: () =>
-                    import ('@/views/map/ol.vue')
-            }
-        ]
     },
     {
         path: '/see',
@@ -130,6 +95,51 @@ let routerList = [{
                 },
                 component: () =>
                     import ('@/views/see/echartBar.vue')
+            }
+        ]
+    },
+    {
+        path: '/map',
+        redirect: '/map/mapboxgl',
+        name: 'map',
+        component: Layout,
+        meta: {
+            title: 'map'
+        },
+        children: [{
+                path: '/map/mapboxgl',
+                name: 'mapboxgl',
+                meta: {
+                    title: 'mapbox gl'
+                },
+                component: () =>
+                    import ('@/views/map/maoboxgl.vue')
+            }, {
+                path: '/map/maptalks',
+                name: 'maptalks',
+                meta: {
+                    title: 'maptalks'
+                },
+                component: () =>
+                    import ('@/views/map/maptalks.vue')
+            },
+            {
+                path: '/map/openlayers',
+                name: 'Openlayers',
+                meta: {
+                    title: 'openlayers'
+                },
+                component: () =>
+                    import ('@/views/map/ol.vue')
+            },
+            {
+                path: '/map/leaflet',
+                name: 'Leaflet',
+                meta: {
+                    title: 'leaflet'
+                },
+                component: () =>
+                    import ('@/views/map/leaflet.vue')
             }
         ]
     },
