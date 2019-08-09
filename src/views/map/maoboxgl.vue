@@ -129,6 +129,17 @@ export default {
   },
   methods: {
     add3DL() {
+       this.Map.flyTo({
+        center: [121.49, 31.23],
+        zoom: 16,
+        bearing: 0,
+        pitch: 66,
+        speed: 10,
+        curve: 1, // change the speed at which it zooms out
+        easing: function(t) {
+          return t;
+        }
+      });
       var layers = this.Map.getStyle().layers;
       var labelLayerId;
       for (var i = 0; i < layers.length; i++) {
@@ -148,7 +159,7 @@ export default {
         zoom: 16,
         bearing: 0,
         pitch: 66,
-        speed: 1,
+        speed: 4,
         curve: 1, // change the speed at which it zooms out
         easing: function(t) {
           return t;
@@ -180,7 +191,7 @@ export default {
   padding: 10px;
 }
 #map {
-  height: calc(100vh - 80px);
+  height: calc(100vh - 120px);
   margin: 0px;
   padding: 0px;
 }

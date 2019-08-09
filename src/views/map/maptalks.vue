@@ -238,7 +238,7 @@ export default {
   padding: 10px;
 }
 #map {
-  height: calc(100vh - 80px);
+  height: calc(100vh - 120px);
   margin: 0px;
   padding: 0px;
 }
