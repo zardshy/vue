@@ -7,14 +7,16 @@
       </div>
       <el-input
         placeholder="请输入用户名"
-        suffix-icon="fa fa-user"
+        prefix-icon="el-icon-user"
         v-model="userNmae"
         style="margin-bottom: 17px"
+        clearable
       ></el-input>
 
       <el-input
         placeholder="请输入密码"
-        suffix-icon="fa fa-keyboard-o"
+       prefix-icon="el-icon-goods"
+       clearable
         v-model="password"
         type="password"
         style="margin-bottom: 18px"

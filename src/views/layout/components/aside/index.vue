@@ -42,7 +42,7 @@ export default {
   },
   created() {
     let temp = this.$router.options.routes.filter(r => {
-      return r.path != "/" && r.path != "/login";
+      return r.path != "/" && r.path != "/login" && r.path != "*";
     });
     this.routeList = temp;
     console.log(this.routeList);

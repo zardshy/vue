@@ -27,8 +27,8 @@
       <el-table-column sortable prop="address" label="地址"></el-table-column>
       <el-table-column fixed="right" label="操作" width="100">
         <template slot-scope="scope">
-          <el-button @click="handleClick(scope.row)" type="text" size="small">查看</el-button>
-          <el-button type="text" size="small">编辑</el-button>
+          <el-button @click="handleClick(scope.row)"  type="text" size="small">查看</el-button>
+          <el-button @click="handleClick(scope.row)" type="text" size="small">编辑</el-button>
         </template>
       </el-table-column>
     </el-table>
@@ -43,10 +43,12 @@
       layout="total, sizes, prev, pager, next, jumper"
       :total="400"
     ></el-pagination>
+    <Dialog ref='myDialog'></Dialog>
   </div>
 </template>
 
 <script>
+import Dialog from './dialog.vue'
 export default {
   data() {
     return {
@@ -90,6 +92,14 @@ export default {
     setTimeout(() => {
       this.loading = false;
     }, 1000);
+  },
+  components:{
+    Dialog
+  },
+  methods:{
+    handleClick(v){
+      this.$refs.myDialog.openDialog(v);
+    }
   }
 };
 </script>
