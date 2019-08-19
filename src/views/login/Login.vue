@@ -52,9 +52,21 @@ export default {
   methods: {
     handleLogin() {
       this.loginLoading = true;
-      //loginApi({userNmae:this.userNmae,password:this.password}).then(r=>{}).catch(_=>{})
+      // this.$axios.post(this.url, {username: this.userNmae, password: this.password}).then(res => {
+      //   if (res.data.token) {
+      //       this.setUser(res.data)
+      //   } else {
+      //       this.showMessage('用户名或密码错误')
+      //   }
+      // }, err => {
+      //     this.showMessage('用户名或密码错误')
+      //     console.log('err', err)
+      // })
+
+   
+sessionStorage.setItem('userToken','zardtoken')
+console.log(sessionStorage)
       setTimeout(() => {
-        setToken("adminToken");
         this.$notify({
           title: "登录成功!",
           message:"请使用谷歌浏览器访问！",
@@ -63,6 +75,10 @@ export default {
         this.loginLoading = false;
         this.$router.push({ path: "/see/wind" });
       }, 1000);
+    },
+    setUserToken(data){
+      // this.$store.commit('SET_TOKEN', data.token)
+      // this.$store.commit('SET_NAME', data.user.name)
     }
   }
 };
